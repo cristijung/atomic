@@ -5,4 +5,4 @@
 - Nextjs
 - React 19
 - Tailwind
-- React Icons
+- React Icons: `npm install react-icons --save`
