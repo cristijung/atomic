@@ -30,3 +30,6 @@
 - Usar um BaaS (Backend as a Service) gratuito como Firebase/Firestore
 - LocalStorage
 - Consumir um Json local ou via CDN
+
+### Observação:
+Criar um novo repositório com o nome da aplicação.
