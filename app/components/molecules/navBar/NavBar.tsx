@@ -13,7 +13,8 @@ export default function NavBar() {
         { href: '/historia', texto: "História", icon: <FaScroll className={iconSize} /> },
         { href: '/livros', texto: "Livros", icon: <FaBookOpen className={iconSize} /> },
         { href: '/personagens', texto: "Personagens", icon: <FaUsers className={iconSize} /> },
-        { href: '/filmes', texto: "Filmes", icon: <FaFilm className={iconSize} /> },
+        { href: '/wallpapers', texto: "WallPapers", icon: <FaFilm className={iconSize} /> },
+        { href: '/filmes', texto: "Filmes", icon: <FaFilm className={iconSize} /> },        
     ];
 
     return (
