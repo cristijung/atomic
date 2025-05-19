@@ -7,6 +7,7 @@
 - Tailwind: estilização somente com este recurso
 - React Icons: `npm install react-icons --save`
 - Heroicons: `npm install @heroicons/react`
+- Jest: `npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom @types/jest ts-jest`
 
 ### Temas do projeto
 É livre desde que contemple uma das categorias abaixo;
@@ -91,4 +92,20 @@ function MyComponent({ data }) {
 
   return <SomeOtherComponent config={options} />;
 }
+```
+_____________________________________________________________________________________
+
+# Testes Unitários
+## React Testing Library
+## Jest
+
+### Configurando um projeto React/Nest.Js
+
+- Instalação: `npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom @types/jest ts-jest`
+_____________________
+- jest e jest-environment-jsdom: Framework de teste e ambiente que simula um navegador.
+- @testing-library/react: O núcleo da React Testing Library.
+- @testing-library/jest-dom: Adiciona matchers customizados para o Jest para facilitar asserções no DOM (ex: toBeInTheDocument(), toHaveTextContent()).
+- @types/jest: Tipos TypeScript para o Jest.
+- ts-jest: Um preset para o Jest que permite que ele entenda e execute arquivos TypeScript.
 
