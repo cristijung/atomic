@@ -1,4 +1,4 @@
-// a extensão .jsx pq temos o return no setup
+// a extensão .jsx neste setup pq temos o return no setup --> jest.setup.tsx
 import '@testing-library/jest-dom';
 
 // mock para 'next/navigation' (essencial para o App Router do Next.js)

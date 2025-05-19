@@ -8,6 +8,7 @@
 - React Icons: `npm install react-icons --save`
 - Heroicons: `npm install @heroicons/react`
 - Jest: `npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom @types/jest ts-jest`
+- RTL para eventos: `npm install --save-dev @testing-library/user-event`
 
 ### Temas do projeto
 É livre desde que contemple uma das categorias abaixo;
@@ -94,7 +95,6 @@ function MyComponent({ data }) {
 }
 ```
 _____________________________________________________________________________________
-
 # Testes Unitários
 ## React Testing Library
 ## Jest
@@ -109,3 +109,6 @@ _____________________
 - @types/jest: Tipos TypeScript para o Jest.
 - ts-jest: Um preset para o Jest que permite que ele entenda e execute arquivos TypeScript.
 
+
+_____________________________________________________________________________________
+# React Hook Form
