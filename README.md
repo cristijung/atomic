@@ -74,10 +74,17 @@ O useMemo é um hook do React que serve para otimizar a performance da sua aplic
 - Segundo argumento: Um array de dependências. O `useMemo` irá reexecutar a função criadora e recalcular o valor somente se alguma das dependências neste array tiver mudado desde a última renderização. Se as dependências não mudarem, `useMemo` retorna o valor que ele armazenou (memorizou) da vez anterior.
 
 ```const memoizedValue = useMemo(() => {
-  // Função que calcula um valor caro
+  // Função que calcula um valor 
   return computeExpensiveValue(dep1, dep2);
-}, [dep1, dep2]); // Array de dependências
+}, [dep1, dep2]); // Array de dependências```
 
-________________________________
+Outro exemplo:
+```function MyComponent({ data }) {
+  const options = useMemo(() => ({
+    value: data.value,
+    label: data.label
+  }), [data.value, data.label]); // Só recria 'options' se data.value ou data.label mudar
 
+  return <SomeOtherComponent config={options} />;
+}```
 
