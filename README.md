@@ -6,6 +6,7 @@
 - React 19
 - Tailwind: estilização somente com este recurso
 - React Icons: `npm install react-icons --save`
+- Heroicons: `npm install @heroicons/react`
 
 ### Temas do projeto
 É livre desde que contemple uma das categorias abaixo;

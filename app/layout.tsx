@@ -1,14 +1,22 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import HeroTop from "./components/organisms/hero/HeroTop";
 
-const geistSans = Geist({
+// Remova 'use client'; daqui, RootLayout pode ser um Server Component
+// e renderizar Client Components (como o FavoritesProvider) dentro dele.
+// Se você realmente precisar de lógica de cliente no RootLayout em si,
+// então 'use client'; seria necessário.
+
+import type { Metadata } from "next";
+import { Geist } from "next/font/google"; 
+import "./globals.css";
+import HeroTop from "./components/organisms/hero/HeroTop"; 
+import { FavoritesProvider } from "./context/FavoritesContext";
+
+
+const geistSans = Geist({ 
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets: ["latin"],   
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Geist({ 
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -24,12 +32,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`} 
       >
-        <HeroTop />
-        {children}
+        
+        <FavoritesProvider>
+          <HeroTop /> 
+          <main className="container mx-auto p-4">
+            {children}
+          </main>
+        </FavoritesProvider>
       </body>
     </html>
   );
