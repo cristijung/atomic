@@ -30,7 +30,7 @@ export interface ImageItem {
 
 // interface p o valor do nosso Contexto de Favoritos
 export interface FavoritesContextType {
-  favoriteIds: string[]; // array de IDs das imagens favoritadas
+  favoriteIds: string[]; 
   isFavorite: (id: string) => boolean;
   toggleFavorite: (id: string) => void;  
 }
