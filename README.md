@@ -78,15 +78,17 @@ O useMemo é um hook do React que serve para otimizar a performance da sua aplic
   return computeExpensiveValue(dep1, dep2);
 }, [dep1, dep2]); // Array de dependências```
 
+
+______________
 Outro exemplo:
 ______________
 
-```function MyComponent({ data }) {
+function MyComponent({ data }) {
   const options = useMemo(() => ({
     value: data.value,
     label: data.label
   }), [data.value, data.label]); // Só recria 'options' se data.value ou data.label mudar
 
   return <SomeOtherComponent config={options} />;
-}```
+}
 
