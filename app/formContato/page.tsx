@@ -1,12 +1,12 @@
 import React from "react";
-import FormContato from "../components/atoms/form/FormContato";
+
+import FormContact from "../components/atoms/form/FormContact";
 
 export default function Contact() {
     return(
         <>
         <section>
-            <h1>Entre em contato</h1>
-            <FormContato />
+           <FormContact />
         </section>
         
         </>
