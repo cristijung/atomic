@@ -14,7 +14,7 @@ const customJestConfig: Config = {
   // importante para testar componentes React que interagem com o DOM
   testEnvironment: 'jest-environment-jsdom',
   
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.tsx'],  //aqui muda em função do jest.setup.tsx
   
   moduleNameMapper: {    
     '^@/components/(.*)$': '<rootDir>/app/components/$1',
