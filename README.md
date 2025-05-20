@@ -10,7 +10,7 @@
 - Jest: `npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom @types/jest ts-jest`
 - RTL para eventos: `npm install --save-dev @testing-library/user-event`
 - Ts for Node: `npm install --save-dev ts-node`
-- React Hook Form: `npm install react-hook-form` & `npm install @hookform/resolvers/ zod`
+- React Hook Form: `npm install react-hook-form` & `npm install @hookform/resolvers zod`
 
 ### Temas do projeto
 É livre desde que contemple uma das categorias abaixo;
