@@ -125,3 +125,5 @@ O React Hook Form gira em torno do hook principal useForm. Este hook retorna mé
 - watch: Permite observar o valor de um ou mais campos e re-renderizar o componente quando eles mudam.
 - control: Um objeto usado para integrar componentes controlados de bibliotecas de UI com o React Hook Form através do componente Controller.
 - validação: A validação pode ser configurada diretamente no método register ou através de um resolver que integra esquemas de validação. 
+
+### Obs:
