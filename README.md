@@ -9,6 +9,8 @@
 - Heroicons: `npm install @heroicons/react`
 - Jest: `npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom @types/jest ts-jest`
 - RTL para eventos: `npm install --save-dev @testing-library/user-event`
+- Ts for Node: `npm install --save-dev ts-node`
+- React Hook Form: `npm install react-hook-form` & `npm install @hookform/resolvers/ zod`
 
 ### Temas do projeto
 É livre desde que contemple uma das categorias abaixo;
@@ -112,3 +114,14 @@ _____________________
 
 _____________________________________________________________________________________
 # React Hook Form
+
+React Hook Form é uma biblioteca popular para gerenciar formulários em aplicações React. Ela se destaca pela performance, facilidade de uso e mínima quantidade de re-renderizações, o que a torna uma escolha eficiente para desenvolvedores. 
+
+### Como Funciona → Conceitos Chave
+O React Hook Form gira em torno do hook principal useForm. Este hook retorna métodos e estados que utilizamos para registrar inputs, lidar com a submissão, acessar valores do formulário e gerenciar erros.
+- register: Esta função é usada para registrar seus inputs no React Hook Form. Ao registrar um input, conectamos ao sistema de validação e gerenciamento de estado da biblioteca.
+- handleSubmit: Esta função envolve sua função de submissão. Ela primeiro executa a validação do formulário e, se tudo estiver correto, chama sua função de callback com os dados do formulário.
+- formState: { errors }: O objeto errors contém informações sobre os erros de validação de cada campo.
+- watch: Permite observar o valor de um ou mais campos e re-renderizar o componente quando eles mudam.
+- control: Um objeto usado para integrar componentes controlados de bibliotecas de UI com o React Hook Form através do componente Controller.
+- validação: A validação pode ser configurada diretamente no método register ou através de um resolver que integra esquemas de validação. 
