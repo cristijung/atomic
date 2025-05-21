@@ -1,4 +1,5 @@
 export interface TitleHeaderProps {
+import { CardInfoProps } from '..';
   title: string;
   subtitle?: string; 
   titleClassName?: string; 
@@ -33,4 +34,11 @@ export interface FavoritesContextType {
   favoriteIds: string[]; 
   isFavorite: (id: string) => boolean;
   toggleFavorite: (id: string) => void;  
+}
+
+export interface CardInfoProps {
+  titulo: string;
+  subtitulo?: string;
+  descricao: string;
+  informacaoAdicional: string;
 }
