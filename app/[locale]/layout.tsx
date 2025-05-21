@@ -6,9 +6,9 @@
 
 import type { Metadata } from "next";
 import { Geist } from "next/font/google"; 
-import "./globals.css";
-import HeroTop from "./components/organisms/hero/HeroTop"; 
-import { FavoritesProvider } from "./context/FavoritesContext";
+import "../globals.css";
+import HeroTop from "../components/organisms/hero/HeroTop"; 
+import { FavoritesProvider } from "../context/FavoritesContext";
 
 
 const geistSans = Geist({ 
@@ -33,6 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <link rel="icon" href="/favicon.ico" />   {/* mudei aqui por causa da internacionalização */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`} 
       >

@@ -1,6 +1,7 @@
 {
   "Index": {
-    "title": "Olá, mundo!"
+    "title": "Olá, mundo!",
+     "welcomeMessage": "Bem-vindo(a) à nossa página!"
   },
   "About": {
     "title": "Sobre nós",

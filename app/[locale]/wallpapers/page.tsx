@@ -1,6 +1,6 @@
 import React from "react";
-import { ListaCards } from "../components/molecules/cards/ListCards";
-import { mockImages } from "../data/imagensData";
+import { ListaCards } from "../../components/molecules/cards/ListCards";
+import { mockImages } from "../../data/imagensData";
 
 export default function WallPapers() {
   const imagesToDisplay = mockImages;

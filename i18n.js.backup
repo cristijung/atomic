@@ -1,0 +1,42 @@
+// i18n.js (Versão JavaScript para Teste de Diagnóstico)
+
+// Importa as funções necessárias usando 'require' para CommonJS
+import { getRequestConfig } from 'next-intl/server';
+import { notFound } from 'next/navigation'; 
+
+// Lista dos seus locales suportados
+const locales = ['en', 'pt', 'es'];
+
+// Exporta a configuração usando module.exports para CommonJS
+export default getRequestConfig(async ({ locale }) => {
+  // Validação simples do locale
+  // Nota: `locale` pode ser undefined aqui se não for passado corretamente pela chamada interna.
+  // A versão TypeScript com o type guard era mais robusta, mas aqui simplificamos.
+  if (typeof locale !== 'string' || !locales.includes(locale)) {
+    // Em um cenário real, você pode querer logar que o locale é inválido/undefined.
+    // A função notFound() deve ser chamada para interromper o processamento e mostrar um 404.
+    return notFound();
+  }
+
+  let messages;
+  try {
+    // O import() dinâmico para JSON funciona bem aqui e retorna uma Promise.
+    // '.default' é necessário porque os arquivos JSON, quando importados dinamicamente
+    // como módulos ES, têm seu conteúdo no objeto 'default'.
+    messages = (await import(`./locales/${locale}.json`)).default;
+  } catch (error) {
+    console.error(
+      `[i18n.js] Erro ao carregar o arquivo de mensagens para o locale "${locale}": ./locales/${locale}.json.`,
+      error
+    );
+    // Se o arquivo JSON específico para um locale suportado não for encontrado ou estiver malformado,
+    // chamamos notFound() para renderizar uma página 404.
+    return notFound();
+  }
+
+  // Retorna o objeto de configuração esperado pelo next-intl
+  return {
+    messages: messages,
+    locale: locale, // O locale validado
+  };
+});
