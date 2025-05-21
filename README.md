@@ -165,3 +165,55 @@ Esta é, provavelmente, a biblioteca mais popular e recomendada para projetos Ne
 - Plurais e Gênero: Use as funcionalidades da biblioteca escolhida para lidar corretamente com plurais e variações de gênero.
 - Testes: Teste sua aplicação em todos os idiomas suportados.
 - A escolha da biblioteca dependerá das necessidades específicas do seu projeto, mas next-intl é geralmente o caminho mais direto e bem integrado para projetos Next.js com TypeScript.
+
+## getServerSideProps e getStaticProps: 
+São duas funções fundamentais do Next.js para buscar dados e pré-renderizar páginas. Elas são essenciais para decidir como e quando seus dados são carregados, o que impacta diretamente a performance e a experiência do usuário, inclusive na internacionalização.
+
+### `getStaticProps` --> Geração Estática de Sites - SSG
+É uma função assíncrona que você pode exportar de uma página no Next.js. Ela permite que você busque dados durante o tempo de construção (build time) e os passe como props para sua página.
+
+#### Quando executa:
+No servidor, durante o build (next build). O Next.js executa getStaticProps para cada página que a utiliza, gera o HTML com os dados buscados e o salva como um arquivo estático.
+No servidor, em segundo plano, ao usar Revalidação Estática Incremental (ISR). Com ISR, a página é reconstruída periodicamente ou sob demanda após um certo tempo.
+Nunca executa no lado do cliente (browser).
+
+#### Como funciona:
+- No build, o Next.js executa getStaticProps.
+- Os dados retornados no objeto props são usados para pré-renderizar a página em HTML.
+- Quando um usuário acessa a página, ele recebe esse HTML pré-renderizado, resultando em um carregamento muito rápido.
+
+#### Casos de Uso:
+- Páginas cujo conteúdo não muda frequentemente (ex: posts de blog, documentação, páginas de marketing, listagem de produtos que não se atualiza a cada segundo).
+- Páginas onde a velocidade de carregamento inicial é crítica e o conteúdo pode ser pré-gerado.
+- Geração de páginas para múltiplos idiomas no build time (com getStaticPaths).
+
+#### Retorno da Função:
+Deve retornar um objeto com uma das seguintes propriedades:
+- props: Um objeto com os dados que serão passados para o componente da página.
+revalidate (opcional): Um número em segundos. Habilita a Revalidação Estática Incremental (ISR). A página será reconstruída no máximo uma vez dentro desse intervalo de tempo se houver novas requisições.
+- notFound (opcional): Um booleano. Se true, a página retornará um status 404.
+- redirect (opcional): Um objeto para redirecionar para outra rota interna ou externa.
+
+### `getServerSideProps` --> Renderização no Lado do Servidor - SSR
+É uma função assíncrona que você pode exportar de uma página no Next.js. Ela permite que você busque dados a cada requisição do usuário.
+
+#### Quando executa:
+No servidor, a cada requisição. Quando um usuário solicita a página, o Next.js executa getServerSideProps, busca os dados, e então renderiza o HTML da página no servidor e o envia para o cliente.
+Nunca executa no lado do cliente (browser).
+
+#### Como funciona:
+- O usuário requisita a página.
+- O servidor Next.js executa getServerSideProps.
+- Os dados retornados no objeto props são usados para renderizar a página em HTML no servidor.
+-O HTML gerado é enviado ao navegador do usuário.
+
+#### Casos de Uso:
+- Páginas cujo conteúdo precisa estar sempre atualizado a cada requisição (ex: painel de controle do usuário, dados que mudam em tempo real).
+- Páginas com dados altamente personalizados para o usuário logado.
+- Quando o SEO é crucial e os dados mudam frequentemente, mas você não pode usar SSG/ISR.
+
+#### Retorno da Função:
+Deve retornar um objeto com uma das seguintes propriedades:
+- props: Um objeto com os dados que serão passados para o componente da página.
+- notFound (opcional): Um booleano. Se true, a página retornará um status 404.
+- redirect (opcional): Um objeto para redirecionar para outra rota interna ou externa.
