@@ -34,3 +34,10 @@ export interface FavoritesContextType {
   isFavorite: (id: string) => boolean;
   toggleFavorite: (id: string) => void;  
 }
+
+export interface CardInfoProps {
+  titulo: string;
+  subtitulo?: string; 
+  descricao: string;
+  informacaoAdicional?: string; 
+}
