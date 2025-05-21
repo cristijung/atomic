@@ -139,7 +139,7 @@ A internacionalização (i18n) em projetos React com Next.js é o processo de ad
 Existem várias bibliotecas e estratégias para implementar i18n em seu projeto Next.js com TypeScript. As mais comuns incluem:
 
 next-i18next --> next-intl
-Esta é, provavelmente, a biblioteca mais popular e recomendada para projetos Next.js. Ela se integra perfeitamente com o framework, aproveitando seu sistema de roteamento e funcionalidades de renderização (SSR/SSG/ISR) e tem configurações específicicas para Client e server Components.
+Esta é, provavelmente, a biblioteca mais popular e recomendada para projetos Next.js. Ela se integra perfeitamente com o framework, aproveitando seu sistema de roteamento e funcionalidades de renderização (SSR/SSG/ISR) e tem configurações específicas para Client e server Components.
 
 ### Principais Características:
 
@@ -153,7 +153,7 @@ Esta é, provavelmente, a biblioteca mais popular e recomendada para projetos Ne
 
 - Configuramos os idiomas suportados e o idioma padrão no next-i18next.config.js.
 - Criamos os arquivos de tradução (geralmente JSON) para cada idioma em public/locales/{idioma}/{namespace}.json.
-- Usmaos o HOC appWithTranslation no seu _app.tsx e a função serverSideTranslations em suas páginas para carregar as traduções necessárias.
+- Usamos o HOC appWithTranslation no seu _app.tsx e a função serverSideTranslations em suas páginas para carregar as traduções necessárias.
 - Utilizamos o hook useTranslation ou o HOC withTranslation nos seus componentes para acessar as funções de tradução (t).
 
 ### Algumas observações:
