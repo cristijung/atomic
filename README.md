@@ -4,7 +4,9 @@
 ### Recursos & Tecnologias instalados:
 - Nextjs: sem diretório 'src', em 'App Router' e EsLint
 - React 19
-- Tailwind: estilização somente com este recurso
+- Tailwind
+- MUI: `npm install @mui/material @emotion/react @emotion/styled`
+- MUI Icons: `npm install @mui/icons-material roboto-fontface`
 - React Icons: `npm install react-icons --save`
 - Heroicons: `npm install @heroicons/react`
 - Jest: `npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom @types/jest ts-jest`
